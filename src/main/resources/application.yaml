@@ -1,4 +1,4 @@
-spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+spring.datasource.url: jdbc:h2:file:./.data/h2/camunda-kafka-demo-db
 
 camunda.bpm:
   admin-user:
@@ -7,6 +7,6 @@ camunda.bpm:
   filter.create: All Tasks
 
 kafka:
-  bootstrap-address: localhost:9092
+  bootstrap-address: "${KAFKA_URI:localhost}"
   group-id: someGroupId
   trusted-packages: org.camunda.bpm.demo.dto
